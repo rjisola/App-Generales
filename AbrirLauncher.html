@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sistema de Sueldos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #0078d4;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .launch-btn {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            display: inline-block;
+        }
+
+        .launch-btn:hover {
+            background-color: #005a9e;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon">🚀</div>
+        <h1>Sistema de Sueldos</h1>
+        <p>Haga clic en el botón para iniciar la aplicación.</p>
+        <a href="sueldoslauncher:open" class="launch-btn" id="launchLink">Iniciar Aplicación</a>
+        <p style="font-size: 12px; margin-top: 20px; color: #888;">
+            Primero asegúrese de haber ejecutado el archivo 'instalar_protocolo.reg'
+        </p>
+    </div>
+
+    <script>
+        // Intentar iniciar automáticamente
+        setTimeout(function () {
+            document.getElementById('launchLink').click();
+        }, 500);
+        // Comentado para que el usuario tenga control total
+    </script>
+</body>
+
+</html>

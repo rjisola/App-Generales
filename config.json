@@ -1,0 +1,173 @@
+{
+    "sheet_names":  {
+                        "contador":  "ENVIO CONTADOR",
+                        "expenses":  "SUELDO_ALQ_GASTOS",
+                        "print_receipts":  "IMPRIMIR TOTALES",
+                        "recount":  "RECUENTO TOTAL",
+                        "calculator":  "CALCULAR HORAS"
+                    },
+    "print_presets":  {
+                          "COMPACTO":  {
+                                           "empty_row_height":  6,
+                                           "row_height":  15,
+                                           "rows_per_receipt":  14
+                                       },
+                          "AMPLIO":  {
+                                         "empty_row_height":  8,
+                                         "row_height":  18,
+                                         "rows_per_receipt":  18
+                                     }
+                      },
+    "print_preset":  "AMPLIO",
+    "category_rules":  {
+                           "AZUL":  {
+                                        "special_cases":  {
+                                                              "Holgado Pedro Atilio":  120,
+                                                              "Albornoz Claudio Gera":  120,
+                                                              "Souza Edgardo Andres":  120
+                                                          },
+                                        "base_salary_divisor":  110,
+                                        "manual_saturday12":  {
+                                                                  "Albornoz Claudio Gera":  3
+                                                              }
+                                    },
+                           "SALMON":  {
+                                          "bonus_factor":  1.2,
+                                          "hourly_rates_ref":  {
+                                                                   "MEDIO OFICIAL":  "B3",
+                                                                   "ESPECIALIZADO":  "B1",
+                                                                   "AYUDANTE":  "B4",
+                                                                   "OFICIAL":  "B2"
+                                                               }
+                                      },
+                           "CELESTE":  {
+                                           "base_salary_divisor":  120
+                                       },
+                           "GRIS":  {
+                                        "hourly_rates_ref":  {
+                                                                 "rate_100":  "D1",
+                                                                 "rate_50":  "C1"
+                                                             }
+                                    },
+                           "NARANJA":  {
+                                           "hourly_rates_ref":  {
+                                                                    "no_presenteeism_ferreyra":  "K1",
+                                                                    "with_presenteeism":  "F1",
+                                                                    "with_presenteeism_ferreyra":  "L1",
+                                                                    "rate_100":  "D1",
+                                                                    "holiday":  "B1",
+                                                                    "no_presenteeism":  "E1"
+                                                                }
+                                       },
+                           "TEJA":  {
+                                        "hourly_rates_ref":  {
+                                                                 "rate_100":  "D1",
+                                                                 "rate_50":  "C1"
+                                                             }
+                                    },
+                           "AMARILLO":  {
+                                            "bonus_factor":  1,
+                                            "hourly_rates_ref":  {
+                                                                     "MEDIO OFICIAL":  "B3",
+                                                                     "ESPECIALIZADO":  "B1",
+                                                                     "AYUDANTE":  "B4",
+                                                                     "OFICIAL":  "B2"
+                                                                 }
+                                        },
+                           "VERDE":  {
+                                         "hourly_rates_ref":  {
+                                                                  "normal":  "B1"
+                                                              },
+                                         "presenteeism_bonus":  1.2
+                                     },
+                           "MARRON":  {
+                                          "bonus_factor":  1,
+                                          "hourly_rates_ref":  {
+                                                                   "MEDIO OFICIAL":  "B3",
+                                                                   "ESPECIALIZADO":  "B1",
+                                                                   "AYUDANTE":  "B4",
+                                                                   "OFICIAL":  "B2"
+                                                               }
+                                      },
+                           "BLANCO":  {
+                                          "bonus_factor":  1.2,
+                                          "hourly_rates_ref":  {
+                                                                   "MEDIO OFICIAL":  "B3",
+                                                                   "ESPECIALIZADO":  "B1",
+                                                                   "AYUDANTE":  "B4",
+                                                                   "OFICIAL":  "B2"
+                                                               }
+                                      }
+                       },
+    "printing":  {
+                     "row_heights_template":  [
+                                                  25.0,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  15.0,
+                                                  15.0,
+                                                  15.0,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  20.1,
+                                                  25.0
+                                              ],
+                     "row_height_default":  20,
+                     "empty_row_height":  0,
+                     "rows_per_receipt":  19
+                 },
+    "print":  {
+                  "page_rows":  38,
+                  "row_height_delta":  0,
+                  "compact_factor":  0.95
+              },
+    "color_mapping":  {
+                          "FFFCE4D6":  "SALMON",
+                          "FFFFFFFF":  "BLANCO",
+                          "FFC00000":  "TEJA",
+                          "FFFFCC66":  "MARRON",
+                          "FFFFFF00":  "AMARILLO",
+                          "FFFFC000":  "NARANJA",
+                          "FF4472C4":  "AZUL",
+                          "FF70AD47":  "VERDE",
+                          "FF9BBB59":  "VERDE",
+                          "FF4F81BD":  "CELESTE",
+                          "FF5B9BD5":  "CELESTE",
+                          "5B9BD5":  "CELESTE",
+                          "005B9BD5":  "CELESTE",
+                          "FFBDD7EE":  "CELESTE",
+                          "FFD3EBF7":  "CELESTE",
+                          "FFD3D3D3":  "GRIS",
+                          "FF4BACC6":  "AZUL",
+                          "FFA5A5A5":  "GRIS"
+                      },
+    "summary_layout_template":  "PROGRAMA DEPOSITO 1ERA DICIEMBRE2025.xlsm",
+    "text_input_mappings": {
+        "mappings": [
+            {
+                "inputs": ["x", "X"],
+                "output": {"hours": 9.0, "status": "OK"}
+            },
+            {
+                "inputs": ["v", "V", "vac", "VAC", "vacaciones", "VACACIONES"],
+                "output": {"hours": 0.0, "status": "VACATION"}
+            },
+            {
+                "inputs": ["e", "E", "enf", "ENF"],
+                "output": {"hours": 0.0, "status": "SICK"}
+            }
+        ]
+    },
+    "file_paths": {
+        "input_excel": "PROGRAMA DEPOSITO 1ERA DICIEMBRE2025.xlsm"
+    }
+}

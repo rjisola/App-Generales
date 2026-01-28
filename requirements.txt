@@ -1,0 +1,9 @@
+pandas
+openpyxl
+numpy
+PyPDF2
+reportlab
+Pillow
+num2words
+pikepdf
+pywin32
