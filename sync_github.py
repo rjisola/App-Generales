@@ -54,7 +54,16 @@ def main():
         print("\n⚠️ No hay repositorio remoto configurado.")
         print("   --- CONFIGURACIÓN AUTOMÁTICA PARA 'App-Generales' ---")
         
-        github_user = input("   Ingresa tu nombre de usuario de GitHub: ").strip()
+        # Intentar detectar usuario automáticamente
+        default_user = ""
+        ok_u, name_u = run_command("git config user.name")
+        if ok_u and name_u.strip():
+             default_user = name_u.strip()
+
+        prompt = f"   Ingresa tu nombre de usuario de GitHub (Enter para '{default_user}'): " if default_user else "   Ingresa tu nombre de usuario de GitHub: "
+        github_user = input(prompt).strip()
+        if not github_user and default_user:
+            github_user = default_user
         
         if github_user:
             url = f"https://github.com/{github_user}/App-Generales.git"
@@ -80,6 +89,12 @@ def main():
 
     # 5. Agregar y Commitear
     print("\n📦 Preparando archivos...")
+    
+    # Detectar capturas de pantalla (.png) explícitamente
+    png_files = [f for f in os.listdir('.') if f.lower().endswith('.png')]
+    if png_files:
+        print(f"   📸 Se detectaron {len(png_files)} imágenes (.png) que se incluirán en la subida.")
+        
     run_command("git add .")
     
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
