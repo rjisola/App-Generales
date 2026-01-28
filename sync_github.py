@@ -60,19 +60,15 @@ def main():
             url = f"https://github.com/{github_user}/App-Generales.git"
             print(f"   URL Destino: {url}")
             
-            print("   ¿Ya existe el repositorio 'App-Generales' en tu GitHub?")
-            resp = input("   (s = sí / n = no, crearlo ahora): ").lower().strip()
-            
-            if resp == 'n':
-                print("   Abriendo navegador para crear el repositorio...")
-                try:
-                    webbrowser.open("https://github.com/new?name=App-Generales")
-                except:
-                    pass
-                input("   >>> Presiona Enter una vez hayas creado el repositorio en el navegador...")
-            
+            # Configurar remoto directamente
             run_command(f"git remote add origin {url}")
-            print("✓ Remoto 'origin' configurado.")
+            
+            print("   🔍 Verificando acceso al repositorio...")
+            ok_check, _ = run_command(f"git ls-remote {url}")
+            if ok_check:
+                print("   ✅ Repositorio 'App-Generales' verificado y accesible.")
+            else:
+                print("   ⚠️ No se pudo verificar automáticamente (continuando subida confiando en que existe)...")
         else:
             print("⚠️ No se ingresó usuario. Modo manual.")
             url = input("   URL del repositorio (ej: https://github.com/usuario/repo.git): ").strip()
