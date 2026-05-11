@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache-bust: forzar recarga completa cada vez -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>🚀 Sistema de Sueldos - Launcher ULTRA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.6s ease;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #2563eb;
+            text-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        header p {
+            font-size: 20px;
+            color: #6b7280;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #3b82f6;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: #3b82f6;
+            background: #f8faff;
+        }
+
+        .card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            font-size: 72px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .card-description {
+            font-size: 15px;
+            color: #6b7280;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .card-status {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: #ecfdf5;
+            color: #059669;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Colores dinámicos */
+        .card:hover .card-status {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .status-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(31, 41, 55, 0.95);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            min-width: 600px;
+            z-index: 100;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: slideUp 0.5s ease;
+        }
+
+        .status-bar p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        #status-text {
+            color: #93c5fd;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translate(-50%, 50px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        /* Categorías */
+        .card.blue { border-top: 5px solid #3b82f6; }
+        .card.green { border-top: 5px solid #10b981; }
+        .card.purple { border-top: 5px solid #8b5cf6; }
+        .card.orange { border-top: 5px solid #f59e0b; }
+
+        @media (max-width: 768px) {
+            .status-bar { min-width: 90%; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Sistema de Sueldos ULTRA</h1>
+            <p>Selector de Aplicaciones Móvil y Web</p>
+        </header>
+
+        <div class="cards-grid">
+            <a href="sueldos-calculadora:open" class="card blue" data-name="Calculadora de Horas" data-desc="Cálculo de jornales UOCRA, NASA y UECARA con automatización de promedios.">
+                <span class="card-icon">🧮</span>
+                <h3 class="card-title">Calculadora de Horas</h3>
+                <p class="card-description">Gestión de jornadas y sueldos liquidados.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+
+            <a href="sueldos-recibos:open" class="card green" data-name="Generar Recibos" data-desc="Creación de recibos de sueldo en PDF listos para firmar y distribuir.">
+                <span class="card-icon">📄</span>
+                <h3 class="card-title">Generar Recibos</h3>
+                <p class="card-description">Emisión masiva de documentos PDF.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+
+            <a href="sueldos-procesar:open" class="card purple" data-name="Procesar Sueldos" data-desc="Cálculo final de nómina y generación de archivos Excel operativos.">
+                <span class="card-icon">💼</span>
+                <h3 class="card-title">Procesar Sueldos</h3>
+                <p class="card-description">Módulo central de procesamiento de sueldos.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+
+            <a href="sueldos-firmas:open" class="card blue" data-name="Extractor de Firmas ULTRA" data-desc="Localización inteligente (Pág 3/4) y captura milimétrica de firmas transparentes.">
+                <span class="card-icon">🖋️</span>
+                <h3 class="card-title">Extractor de Firmas ULTRA</h3>
+                <p class="card-description">Extracción automática de firmas desde PDFs.</p>
+                <span class="card-status">NUEVO</span>
+            </a>
+
+            <a href="sueldos-epp:open" class="card orange" data-name="Formulario EPP" data-desc="Generación de planillas oficiales de Entrega de EPP (Elementos de Protección Personal).">
+                <span class="card-icon">🛠️</span>
+                <h3 class="card-title">Formulario EPP</h3>
+                <p class="card-description">Planillas de entrega de EPP en Excel.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+
+            <a href="sueldos-lector:open" class="card purple" data-name="Lector Inteligente" data-desc="Asistente con Inteligencia Artificial para análisis y búsqueda en documentos.">
+                <span class="card-icon">🧠</span>
+                <h3 class="card-title">Lector Inteligente</h3>
+                <p class="card-description">Análisis documental con Gemini AI.</p>
+                <span class="card-status">IA ACTIVA</span>
+            </a>
+
+            <a href="sueldos-deposito:open" class="card blue" data-name="Horas Depósito" data-desc="Control y carga de novedades de horas para el personal de logística/depósito.">
+                <span class="card-icon">🏪</span>
+                <h3 class="card-title">Horas Depósito</h3>
+                <p class="card-description">Carga de horas para equipo de depósito.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+
+            <a href="sueldos-sobres:open" class="card blue" data-name="Imprimir Sobres" data-desc="Configuración y envío a impresión de sobres C5 para recibos de sueldo.">
+                <span class="card-icon">✉️</span>
+                <h3 class="card-title">Imprimir Sobres</h3>
+                <p class="card-description">Impresión masiva de sobres corporativos.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+
+            <a href="sueldos-fechas:open" class="card blue" data-name="Fechas Ingreso" data-desc="Extrae y procesa fechas de ingreso para cálculos de antigüedad y vacaciones.">
+                <span class="card-icon">📅</span>
+                <h3 class="card-title">Fechas Ingreso</h3>
+                <p class="card-description">Cálculos de antigüedad y vacaciones.</p>
+                <span class="card-status">Disponible</span>
+            </a>
+        </div>
+
+        <div class="status-bar">
+            <p id="status-display">✓ Listo - Pase el mouse sobre una aplicación para ver detalles</p>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const statusDisplay = document.getElementById('status-display');
+        const originalText = statusDisplay.innerHTML;
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const name = card.getAttribute('data-name');
+                const desc = card.getAttribute('data-desc');
+                statusDisplay.innerHTML = `<span id="status-text">🔍 ${name.toUpperCase()}</span> ${desc}`;
+                statusDisplay.style.color = "#ffffff";
+            });
+
+            card.addEventListener('mouseleave', () => {
+                statusDisplay.innerHTML = originalText;
+                statusDisplay.style.color = "";
+            });
+        });
+
+        console.log('🚀 Ecosistema de Sueldos ULTRA - Launcher Web Cargado Correctamente');
+    </script>
+</body>
+
+</html>

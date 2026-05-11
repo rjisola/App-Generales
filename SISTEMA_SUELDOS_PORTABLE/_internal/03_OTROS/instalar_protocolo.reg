@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\sueldoslauncher]
+@="URL:Sueldos Launcher Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldoslauncher\shell]
+
+[HKEY_CLASSES_ROOT\sueldoslauncher\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldoslauncher\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launcher_wrapper.bat\""

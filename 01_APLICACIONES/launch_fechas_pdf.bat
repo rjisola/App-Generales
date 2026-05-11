@@ -1,0 +1,7 @@
+@echo off
+set SCRIPT_PATH="c:\Users\rjiso\OneDrive\Escritorio\PROCESAR ARCHIVO SUELDOS\01_APLICACIONES\18-EXTRAER_FECHAS_INGRESO.pyw"
+set OTHERS_DIR="c:\Users\rjiso\OneDrive\Escritorio\PROCESAR ARCHIVO SUELDOS\03_OTROS"
+set PYTHONPATH=%OTHERS_DIR%;%PYTHONPATH%
+set CHILD_APP_MODE=1
+start "" pythonw %SCRIPT_PATH%
+exit

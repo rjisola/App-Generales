@@ -1,0 +1,5 @@
+=== RESULTADOS DE PRUEBA DE ARRANQUE ===
+
+Total apps probadas: 17
+Exitosas (17): 1-LAUNCHER.pyw, 10-CALCULAR_HORAS.pyw, 15-PASAR_HORAS_DEPOSITO.pyw, 15-PASAR_HORAS_DEPOSITO_BACKUP.pyw, A-GENERAR_RECIBOS_CONTROL.pyw, Asistente_Aguinaldo_UNIFICADO.pyw, B-PROCESARSUELDOS.pyw, BuscarRecibosPDF.pyw, CalculoAluminio.pyw, generar_epp_excel.pyw, GUIA_PAGO_BANCARIO.pyw, gui_acomodar_pdf.pyw, gui_buscador_conceptos.pyw, gui_extraer_fechas.pyw, gui_planilla.pyw, imprimir_sobres_gui.pyw, Promedio_Sueldos.pyw
+

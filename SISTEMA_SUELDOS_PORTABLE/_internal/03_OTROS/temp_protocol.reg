@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\sueldos-fechas-pdf]
+@="URL:Extraer Fechas PDF"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\sueldos-fechas-pdf\shell]
+
+[HKEY_CURRENT_USER\Software\Classes\sueldos-fechas-pdf\shell\open]
+
+[HKEY_CURRENT_USER\Software\Classes\sueldos-fechas-pdf\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_fechas_pdf.bat\""

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueldos Carjor — Launcher v2.0</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-purple: #bc8cff;
+            --accent-orange: #f0883e;
+            --accent-rose: #f47067;
+            --accent-teal: #39c5bb;
+            --accent-cyan: #53d0ef;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff 0%, #8b949e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* WORKFLOW INDICATOR */
+        .workflow-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .workflow-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .steps {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--border-color);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-num.s1 { background: var(--accent-rose); }
+        .step-num.s2 { background: var(--accent-teal); }
+        .step-num.s3 { background: var(--accent-blue); }
+        .step-num.s4 { background: var(--accent-purple); }
+        .step-num.s5 { background: var(--accent-green); }
+        .step-num.s6 { background: var(--accent-cyan); }
+
+        .step-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-info strong {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .step-info small {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .step-arrow {
+            color: var(--border-color);
+            font-size: 1.2rem;
+        }
+
+        /* GRID SYSTEM */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .section-label::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border-color);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 25px;
+        }
+
+        /* CARD STYLES */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-blue);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #444c56;
+            box-shadow: var(--card-shadow);
+            background-color: #1c2128;
+        }
+
+        .card[data-color="blue"]::before { background: var(--accent-blue); }
+        .card[data-color="green"]::before { background: var(--accent-green); }
+        .card[data-color="purple"]::before { background: var(--accent-purple); }
+        .card[data-color="orange"]::before { background: var(--accent-orange); }
+        .card[data-color="rose"]::before { background: var(--accent-rose); }
+        .card[data-color="teal"]::before { background: var(--accent-teal); }
+        .card[data-color="cyan"]::before { background: var(--accent-cyan); }
+        .card[data-color="pink"]::before { background: #db61a2; }
+        .card[data-color="indigo"]::before { background: #6366f1; }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card-icon-bg {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .tag.badge-new {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: rgba(88, 166, 255, 0.4);
+            color: var(--accent-blue);
+        }
+
+        .card-short {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            min-height: 48px;
+        }
+
+        .card-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin-bottom: 15px;
+        }
+
+        .card-detail {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            flex-grow: 1;
+        }
+
+        .card-detail ul {
+            list-style: none;
+        }
+
+        .card-detail li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        .card-detail li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .card-action {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            background: #238636;
+            color: white;
+        }
+
+        .card-arrow {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .card:hover .card-arrow {
+            transform: translateX(5px);
+            color: var(--text-primary);
+        }
+
+        /* STATUS BAR */
+        .status-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(22, 27, 34, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            z-index: 100;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: fit-content;
+            pointer-events: none;
+        }
+
+        #status-text {
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding-bottom: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .workflow-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Sueldos Carjor</h1>
+            <p class="subtitle">Ecosistema inteligente para la liquidación masiva y gestión de personal.</p>
+        </header>
+
+        <!-- WORKFLOW INDICATOR -->
+        <div class="workflow-bar">
+            <div class="workflow-title">Flujo de trabajo recomendado</div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num s1">1</div>
+                    <div class="step-info">
+                        <strong>Preparar Quincena</strong>
+                        <small>Resetear archivo Excel</small>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-num s2">2</div>
+                    <div class="step-info">
+                        <strong>Horas Depósito</strong>
+                        <small>Carga inicial de logística</small>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-num s3">3</div>
+                    <div class="step-info">
+                        <strong>Calcular Horas</strong>
+                        <small>Procesar jornales UOCRA</small>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-num s4">4</div>
+                    <div class="step-info">
+                        <strong>Procesar Sueldos</strong>
+                        <small>Cierre final de nómina</small>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-num s5">5</div>
+                    <div class="step-info">
+                        <strong>Generar Recibos</strong>
+                        <small>Crear PDFs individuales</small>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-num s6">6</div>
+                    <div class="step-info">
+                        <strong>Enviar Documentación</strong>
+                        <small>Distribuir por Email</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- APLICACIONES PRINCIPALES -->
+        <div class="section-label">⚙️ Aplicaciones principales</div>
+
+        <div class="cards-grid">
+            <!-- 1. PREPARAR QUINCENA -->
+            <a href="sueldos-preparar:open" class="card" data-color="rose"
+               data-name="Preparar Quincena"
+               data-desc="Limpia el archivo de depósito y actualiza el calendario y formatos para el nuevo período.">
+                <div class="card-header">
+                    <div class="card-icon-bg">📅</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Preparar Quincena</h3>
+                        <div class="card-tags">
+                            <span class="tag">Inicio</span>
+                            <span class="tag badge-new">Nuevo</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Realiza la limpieza integral del archivo Excel, actualiza los días de la fila 8
+                    y resetea las fórmulas para comenzar una nueva liquidación.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Borrado de horas y resultados del período anterior</li>
+                        <li>Configuración de calendario (1ra o 2da quincena)</li>
+                        <li>Pintado automático de fines de semana y feriados</li>
+                        <li>Limpieza de hojas de reporte y envío contador</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Fundacional</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 2. HORAS DEPÓSITO -->
+            <a href="sueldos-deposito:open" class="card" data-color="teal"
+               data-name="Horas Depósito"
+               data-desc="Carga y transfiere las horas del personal de depósito al sistema.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🏪</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Horas Depósito</h3>
+                        <div class="card-tags">
+                            <span class="tag">Logística</span>
+                            <span class="tag">Carga Inicial</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Procesa las novedades de horas del personal de logística y depósito,
+                    transfiriéndolas inmediatamente tras el formateo del archivo.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Carga horas normales y extras de depósito</li>
+                        <li>Sincroniza con el archivo de nómina principal</li>
+                        <li>Genera copias de seguridad automáticas</li>
+                        <li>Módulo esencial tras el reset de quincena</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 3. CALCULADORA DE HORAS -->
+            <a href="sueldos-calculadora:open" class="card" data-color="blue"
+               data-name="Calculadora de Horas"
+               data-desc="Calcula jornales UOCRA, NASA y UECARA con promedios, feriados y horas extras.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🧮</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Calculadora de Horas</h3>
+                        <div class="card-tags">
+                            <span class="tag">UOCRA</span>
+                            <span class="tag">NASA</span>
+                            <span class="tag">UECARA</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Calcula automáticamente el sueldo bruto de cada empleado según las horas
+                    trabajadas, categoría y sindicato (UOCRA / NASA / UECARA).
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Carga de horas por empleado y período</li>
+                        <li>Cálculo de promedios y horas extras</li>
+                        <li>Aplicación automática de feriados y adicionales</li>
+                        <li>Exporta resultados al archivo de sueldos Excel</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 4. PROCESAR SUELDOS -->
+            <a href="sueldos-procesar:open" class="card" data-color="purple"
+               data-name="Procesar Sueldos"
+               data-desc="Motor central de procesamiento: cierra la nómina y genera el Excel operativo.">
+                <div class="card-header">
+                    <div class="card-icon-bg">💼</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Procesar Sueldos</h3>
+                        <div class="card-tags">
+                            <span class="tag">Nómina</span>
+                            <span class="tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Es el módulo central: toma las horas calculadas, aplica todos los
+                    descuentos y adicionales, y cierra el archivo de sueldos del período.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Procesa retenciones (jubilación, obra social, etc.)</li>
+                        <li>Aplica retención judicial si corresponde</li>
+                        <li>Calcula SAC proporcional y vacaciones</li>
+                        <li>Genera el Excel final de liquidación del período</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 5. GENERAR RECIBOS -->
+            <a href="sueldos-recibos:open" class="card" data-color="green"
+               data-name="Generar Recibos"
+               data-desc="Crea recibos de sueldo individuales en PDF, listos para imprimir o enviar.">
+                <div class="card-header">
+                    <div class="card-icon-bg">📄</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Generar Recibos</h3>
+                        <div class="card-tags">
+                            <span class="tag">PDF</span>
+                            <span class="tag">Masivo</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Genera un recibo de sueldo completo en PDF para cada empleado,
+                    tomando los datos directamente del archivo de nómina procesado.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Generación masiva de recibos en un solo clic</li>
+                        <li>Incluye todos los conceptos: bruto, descuentos, neto</li>
+                        <li>Formato legal con espacio para firma del empleado</li>
+                        <li>Guarda un PDF por empleado en carpeta de salida</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 6. IMPRIMIR SOBRES -->
+            <a href="sueldos-sobres:open" class="card" data-color="cyan"
+               data-name="Imprimir Sobres"
+               data-desc="Asistente para configurar e imprimir sobres C5 con datos de cada empleado.">
+                <div class="card-header">
+                    <div class="card-icon-bg">✉️</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Imprimir Sobres</h3>
+                        <div class="card-tags">
+                            <span class="tag">Impresión</span>
+                            <span class="tag">C5</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Configura e imprime en lote los sobres C5 con el nombre y datos
+                    de cada empleado para la distribución física de recibos de sueldo.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Toma datos del listado de empleados automáticamente</li>
+                        <li>Configura márgenes para impresora de sobres</li>
+                        <li>Impresión masiva en un solo envío</li>
+                        <li>Vista previa antes de imprimir para verificar</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 7. ENVIAR DOCUMENTACIÓN -->
+            <a href="sueldos-email:open" class="card" data-color="rose"
+               data-name="Enviar Documentación"
+               data-desc="Envía los archivos ZIP de sueldos y recibos por correo electrónico via Gmail.">
+                <div class="card-header">
+                    <div class="card-icon-bg">✈️</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Enviar Documentación</h3>
+                        <div class="card-tags">
+                            <span class="tag">Gmail</span>
+                            <span class="tag">ZIP</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Envía automáticamente los recibos y archivos de sueldos por correo
+                    electrónico (Gmail) a cada empleado o destinatario.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Adjunta recibos individuales o paquetes ZIP</li>
+                        <li>Envío masivo a todos los empleados en un clic</li>
+                        <li>Personaliza el asunto y cuerpo del mensaje</li>
+                        <li>Registro de confirmación de envíos realizados</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 8. FIRMADOR MASIVO PDF -->
+            <a href="sueldos-firmador:open" class="card" data-color="teal"
+               data-name="Firmador Masivo PDF"
+               data-desc="Estampa una firma PNG en todas las hojas de un PDF con posición y escala personalizable.">
+                <div class="card-header">
+                    <div class="card-icon-bg">✍️</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Firmador Masivo PDF</h3>
+                        <div class="card-tags">
+                            <span class="tag badge-new">Nuevo</span>
+                            <span class="tag">PDF</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Permite estampar una firma PNG en todas las hojas de un PDF, 
+                    ideal para firmas de conformidad masivas.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Selección de PDF y archivo de firma (PNG)</li>
+                        <li>Posiciones predefinidas y ajuste de escala</li>
+                        <li>Genera un nuevo PDF sin alterar el original</li>
+                        <li>Optimizado para firmas masivas de conformidad</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 9. EXTRACTOR DE FIRMAS -->
+            <a href="sueldos-firmas:open" class="card" data-color="pink"
+               data-name="Extractor de Firmas"
+               data-desc="Detecta y extrae firmas desde PDFs de recibos con precisión milimétrica.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🖋️</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Extractor de Firmas</h3>
+                        <div class="card-tags">
+                            <span class="tag">PDF → PNG</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Analiza los recibos escaneados y extrae automáticamente la firma
+                    de cada empleado como imagen PNG transparente.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Localiza firmas en páginas del PDF</li>
+                        <li>Extracción con fondo transparente</li>
+                        <li>Procesa múltiples recibos en lote</li>
+                        <li>Guarda firma con nombre del empleado</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- 10. AGUINALDO UNIFICADO -->
+            <a href="sueldos-aguinaldo:open" class="card" data-color="indigo"
+               data-name="Aguinaldo Unificado"
+               data-desc="Calcula el aguinaldo (SAC) de todos los tipos de empleados.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🎯</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Aguinaldo Unificado</h3>
+                        <div class="card-tags">
+                            <span class="tag">SAC</span>
+                            <span class="tag">Liquidación</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Asistente integral para el cálculo del SAC semestral para empleados
+                    Blanco, Negro, Efectivo y Sueldo/Efectivo.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Búsqueda automática de quincenas por carpeta</li>
+                        <li>Soporta 1er y 2do semestre con selección de año</li>
+                        <li>Genera planilla Excel con mejores sueldos</li>
+                        <li>Integración con índice maestro de personal</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- HERRAMIENTAS ADICIONALES -->
+        <div class="section-label">🔧 Herramientas adicionales</div>
+
+        <div class="cards-grid">
+            <!-- EXTRAER FECHAS PDF -->
+            <a href="sueldos-fechas-pdf:open" class="card" data-color="blue"
+               data-name="Extraer Fechas (PDF)"
+               data-desc="Extrae Legajo, Nombre y Fecha de Ingreso directamente desde PDFs de recibos.">
+                <div class="card-header">
+                    <div class="card-icon-bg">📅</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Extraer Fechas (PDF)</h3>
+                        <div class="card-tags">
+                            <span class="tag badge-new">Nuevo</span>
+                            <span class="tag">PDF</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Analiza recibos PDF y extrae automáticamente los datos de ingreso
+                    de los empleados, replicando la lógica de extracción inteligente.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Extracción directa de archivos PDF</li>
+                        <li>Identifica Legajo, Nombre y Fecha de Ingreso</li>
+                        <li>Calcula antigüedad de forma automática</li>
+                        <li>Soporta ordenamiento por índice externo</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- BUSCAR RECIBOS PDF -->
+            <a href="sueldos-buscar:open" class="card" data-color="orange"
+               data-name="Buscar Recibos PDF"
+               data-desc="Localiza y abre recibos de sueldo individuales en PDF por nombre o legajo.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🔍</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Buscar Recibos PDF</h3>
+                        <div class="card-tags">
+                            <span class="tag">Búsqueda</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Busca y abre rápidamente cualquier recibo de sueldo en PDF
+                    filtrando por nombre, legajo o período del empleado.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Búsqueda instantánea por múltiples criterios</li>
+                        <li>Abre el PDF directamente desde el resultado</li>
+                        <li>Escanea subcarpetas automáticamente</li>
+                        <li>Interfaz optimizada para acceso rápido</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- ACOMODAR PDF -->
+            <a href="sueldos-acomodar:open" class="card" data-color="rose"
+               data-name="Acomodar PDF"
+               data-desc="Organiza, separa o une archivos PDF según criterios de nombre o legajo.">
+                <div class="card-header">
+                    <div class="card-icon-bg">📂</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Acomodar PDF</h3>
+                        <div class="card-tags">
+                            <span class="tag">Gestión</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Organiza, separa o une archivos PDF según criterios de nombre o legajo.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Separa PDFs masivos por empleado</li>
+                        <li>Une múltiples PDFs en un solo archivo</li>
+                        <li>Renombra archivos según contenido</li>
+                        <li>Organiza la documentación eficientemente</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- BUSCADOR DE CONCEPTOS -->
+            <a href="sueldos-conceptos:open" class="card" data-color="purple"
+               data-name="Buscador de Conceptos"
+               data-desc="Extrae importes de conceptos específicos desde recibos PDF.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🔎</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Buscador de Conceptos</h3>
+                        <div class="card-tags">
+                            <span class="tag">Auditoría</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Extrae y consolida los importes de conceptos específicos
+                    (descuentos, adicionales, etc.) desde múltiples recibos PDF.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Busca conceptos por nombre o código</li>
+                        <li>Consolida resultados de múltiples archivos</li>
+                        <li>Útil para auditoría de retenciones</li>
+                        <li>Exporta tabla comparativa a Excel</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- PROMEDIOS SUELDOS -->
+            <a href="sueldos-promedio:open" class="card" data-color="blue"
+               data-name="Promedios de Sueldos"
+               data-desc="Calcula promedios mensualizados de sueldos Blanco, Negro y Total.">
+                <div class="card-header">
+                    <div class="card-icon-bg">📊</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Promedios de Sueldos</h3>
+                        <div class="card-tags">
+                            <span class="tag">Análisis</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Genera un informe con los promedios mensualizados de sueldos
+                    discriminados por tipo (Blanco, Negro y Total).
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Calcula promedios por período y categoría</li>
+                        <li>Discrimina entre sueldo blanco y negro</li>
+                        <li>Exporta resultados a Excel para informes</li>
+                        <li>Comparación histórica entre períodos</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- GUÍA PAGO BANCARIO -->
+            <a href="sueldos-pago:open" class="card" data-color="green"
+               data-name="Guía Pago Bancario"
+               data-desc="Filtra empleados por banco y actualiza la guía de pago bancario.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🏦</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Guía Pago Bancario</h3>
+                        <div class="card-tags">
+                            <span class="tag">Finanzas</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Organiza y filtra los datos de pago por banco, generando la
+                    guía oficial para transferencias masivas de sueldos.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Filtra empleados por entidad bancaria</li>
+                        <li>Genera la guía de pago en formato oficial</li>
+                        <li>Actualiza automáticamente los importes</li>
+                        <li>Soporta múltiples entidades bancarias</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- FORMULARIO EPP -->
+            <a href="sueldos-epp:open" class="card" data-color="orange"
+               data-name="Formulario EPP"
+               data-desc="Genera planillas de entrega de Elementos de Protección Personal.">
+                <div class="card-header">
+                    <div class="card-icon-bg">🛡️</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Formulario EPP</h3>
+                        <div class="card-tags">
+                            <span class="tag">Seguridad</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Genera las planillas oficiales de entrega de Elementos de Protección
+                    Personal con firma del receptor y registro histórico.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Selección de empleados desde listado activo</li>
+                        <li>Checklist de EPP entregados por fecha</li>
+                        <li>Genera Excel con formato de planilla legal</li>
+                        <li>Registro histórico por cada operario</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- PLANILLA X ÍNDICE -->
+            <a href="sueldos-planilla:open" class="card" data-color="teal"
+               data-name="Planilla x Índice"
+               data-desc="Herramienta para acomodar y ordenar planillas Excel basándose en el índice.">
+                <div class="card-header">
+                    <div class="card-icon-bg">📑</div>
+                    <div class="card-meta">
+                        <h3 class="card-title">Planilla x Índice</h3>
+                        <div class="card-tags">
+                            <span class="tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-short">
+                    Herramienta para acomodar y ordenar planillas Excel basándose en el índice maestro.
+                </p>
+                <div class="card-divider"></div>
+                <div class="card-detail">
+                    <ul>
+                        <li>Ordena planillas Excel automáticamente</li>
+                        <li>Sincroniza con el índice maestro de personal</li>
+                        <li>Ajusta filas y columnas por legajo</li>
+                        <li>Cruce de datos inteligente entre archivos</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <span class="card-badge">Disponible</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- BARRA DE ESTADO -->
+        <div class="status-bar">
+            <p id="status-display">✦ Pasá el mouse sobre una aplicación para ver más detalles — hacé clic para abrirla</p>
+        </div>
+
+        <footer>
+            Sistema de Sueldos &nbsp;·&nbsp; Gestión Interna de Nómina
+        </footer>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const statusDisplay = document.getElementById('status-display');
+        const originalText = statusDisplay.innerHTML;
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const name = card.getAttribute('data-name');
+                const desc = card.getAttribute('data-desc');
+                statusDisplay.innerHTML = `<span id="status-text">▸ ${name.toUpperCase()}</span> — ${desc}`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                statusDisplay.innerHTML = originalText;
+            });
+        });
+
+        console.log('🚀 Sistema de Sueldos — Launcher Web cargado correctamente');
+    </script>
+</body>
+
+</html>

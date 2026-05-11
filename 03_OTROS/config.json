@@ -1,0 +1,38 @@
+{
+    "appearance_mode": "Light",
+    "last_opened_file": "",
+    "default_font": "Arial",
+    "sheet_names": {
+        "calculator": "CALCULAR HORAS",
+        "recount": "RECUENTO TOTAL",
+        "expenses": "SUELDO_ALQ_GASTOS"
+    },
+    "file_paths": {
+        "input_excel": ""
+    },
+    "mappings": {
+        "concept_col": 3,
+        "amount_col": 4,
+        "description_col": 2
+    },
+    "text_input_mappings": {
+        "mappings": [
+            { "inputs": ["feriado", "f"], "output": {"hours": 0, "status": "holiday"} },
+            { "inputs": ["enfermedad", "e"], "output": {"hours": 0, "status": "sick"} },
+            { "inputs": ["accidente", "a"], "output": {"hours": 0, "status": "accident"} }
+        ]
+    },
+    "color_mapping": {
+        "FFFFFF00": "AMARILLO",
+        "FF4472C4": "AZUL",
+        "FFA5A5A5": "GRIS",
+        "FFFF00": "AMARILLO"
+    },
+    "backup_enabled": true,
+    "theme": {
+        "primary": "#2563eb",
+        "secondary": "#475569",
+        "success": "#16a34a",
+        "error": "#dc2626"
+    }
+}

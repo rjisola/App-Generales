@@ -1,0 +1,4 @@
+customtkinter
+reportlab
+openpyxl
+sqlite3

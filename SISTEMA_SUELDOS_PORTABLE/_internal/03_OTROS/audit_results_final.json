@@ -1,0 +1,570 @@
+[
+  {
+    "Nombre": "ACLAND FRANTL HECTOR",
+    "Color": "AMARILLO",
+    "Python": 447892,
+    "Excel": 447892.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ACOSTA MATIAS LEONEL",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "AGUILAR IVAN ARTURO",
+    "Color": "AMARILLO",
+    "Python": 673660,
+    "Excel": 673661.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ALBORNOZ CLAUDIO GERA",
+    "Color": "AZUL",
+    "Python": 918675,
+    "Excel": 918675.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ANDRADE DIEGO HERNAN",
+    "Color": "CELESTE",
+    "Python": 953928,
+    "Excel": 953929.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ARAUJO WALTER ANDRES",
+    "Color": "CELESTE",
+    "Python": 885962,
+    "Excel": 885963.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "AYALA BRUNO DIEGO",
+    "Color": "AMARILLO",
+    "Python": 545642,
+    "Excel": 545642.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "BARRIOS DUGLAS RAFAEL",
+    "Color": "AMARILLO",
+    "Python": 602980,
+    "Excel": 602980.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "CABRERA JOSE MANUEL",
+    "Color": "AMARILLO",
+    "Python": 414468,
+    "Excel": 414469.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "CABRERA JUAN CARLOS",
+    "Color": "CELESTE",
+    "Python": 811050,
+    "Excel": 811050.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "CACERES MARIANO",
+    "Color": "CELESTE",
+    "Python": 802004,
+    "Excel": 802004.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "CARDOSO MAURO ANTONIO",
+    "Color": "CELESTE",
+    "Python": 850004,
+    "Excel": 850004.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "CIURCILO GABRIEL ERNE",
+    "Color": "CELESTE",
+    "Python": 815472,
+    "Excel": 815472.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "COLALUCE EDUARDO",
+    "Color": "CELESTE",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "DELOR RAMIRO THOMAS",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "DIAZ CRISTIAN ANGEL",
+    "Color": "CELESTE",
+    "Python": 746050,
+    "Excel": 746050.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "DOMINGUEZ PABLO HERNA",
+    "Color": "CELESTE",
+    "Python": 959474,
+    "Excel": 959475.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ERPEN HECTOR JOSE",
+    "Color": "AMARILLO",
+    "Python": 597237,
+    "Excel": 597237.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FALCON JONATHAN JOSE",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FENESTRAZ EDUARDO",
+    "Color": "AMARILLO",
+    "Python": 475986,
+    "Excel": 475986.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA ANTONIO EZEQ",
+    "Color": "CELESTE",
+    "Python": 885934,
+    "Excel": 885935.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA DAVID ISMAEL",
+    "Color": "CELESTE",
+    "Python": 796875,
+    "Excel": 796875.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA DIEGO GASTON",
+    "Color": "CELESTE",
+    "Python": 992751,
+    "Excel": 992751.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA FABIAN DARIO",
+    "Color": "CELESTE",
+    "Python": 985565,
+    "Excel": 985565.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA FRANCO RODRI",
+    "Color": "AMARILLO",
+    "Python": 539323,
+    "Excel": 539323.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA JORGE ISMAEL",
+    "Color": "AMARILLO",
+    "Python": 439943,
+    "Excel": 439943.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA JUAN FRANCIS",
+    "Color": "CELESTE",
+    "Python": 712558,
+    "Excel": 712558.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "FERREYRA RODOLFO EZEQ",
+    "Color": "CELESTE",
+    "Python": 1009389,
+    "Excel": 1009390.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GAUNA RAMON ARMANDO",
+    "Color": "CELESTE",
+    "Python": 819241,
+    "Excel": 819241.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GEUNA FABRICIO AGUSTIN",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GEUNA NELSON WUILFREDO",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GIMENEZ JOSE OSVALDO",
+    "Color": "AMARILLO",
+    "Python": 519800,
+    "Excel": 519800.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GOMEZ OSCAR EUGENIO",
+    "Color": "CELESTE",
+    "Python": 815951,
+    "Excel": 815952.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GONZALEZ CARLOS",
+    "Color": "CELESTE",
+    "Python": 1269270,
+    "Excel": 1269270.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "GONZALEZ DANIEL OSVAL",
+    "Color": "CELESTE",
+    "Python": 243572,
+    "Excel": 243572.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "HOLGADO LEONARDO E",
+    "Color": "GRIS",
+    "Python": 744430,
+    "Excel": 744430.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ISOLA RAUL JORGE",
+    "Color": "GRIS",
+    "Python": 655054,
+    "Excel": 655054.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "LAVIN PAOLO GERMAN",
+    "Color": "AMARILLO",
+    "Python": 547145,
+    "Excel": 547145.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "MANKIW MAURO ALEJANDRO",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "MANKIW NAZARENO EZEQUIEL",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "MANSILLA LUIS ALBERTO",
+    "Color": "AMARILLO",
+    "Python": 519800,
+    "Excel": 519800.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "MONTIVEROS MARIA FERN",
+    "Color": "GRIS",
+    "Python": 718949,
+    "Excel": 718949.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "MONZON LUCIO JESUS",
+    "Color": "AMARILLO",
+    "Python": 658990,
+    "Excel": 658990.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "MU\u00d1OZ FAVIO JAVIER",
+    "Color": "CELESTE",
+    "Python": 867402,
+    "Excel": 867402.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "NAVARRO CARLOS ALBERT",
+    "Color": "CELESTE",
+    "Python": 1132579,
+    "Excel": 1132580.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "PALACIO CLAUDIO",
+    "Color": "CELESTE",
+    "Python": 807379,
+    "Excel": 807379.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "PELUFO",
+    "Color": "CELESTE",
+    "Python": 831262,
+    "Excel": 831263.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "PEREZ HECTOR DARIO",
+    "Color": "CELESTE",
+    "Python": 822152,
+    "Excel": 822152.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "PICOLO ANTONIA M",
+    "Color": "GRIS",
+    "Python": 580012,
+    "Excel": 580012.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "PIEVAROLI CRISTIAN AL",
+    "Color": "AZUL",
+    "Python": 1634787,
+    "Excel": 1634788.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "PLANCHON  CAMILO",
+    "Color": "CELESTE",
+    "Python": 774951,
+    "Excel": 774952.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ROBORTELLA ESTEBAN ED",
+    "Color": "AZUL",
+    "Python": 1811301,
+    "Excel": 1811301.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ROBORTELLA JORGE GERM",
+    "Color": "AZUL",
+    "Python": 2955361,
+    "Excel": 2955362.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ROBORTELLA JUAN JOSE",
+    "Color": "CELESTE",
+    "Python": 924855,
+    "Excel": 924855.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ROBORTELLA STEFANIA",
+    "Color": "GRIS",
+    "Python": 31533,
+    "Excel": 31533.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ROJAS HORACIO MARTIN",
+    "Color": "AMARILLO",
+    "Python": 521202,
+    "Excel": 521202.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "ROLON  DANIEL  OSCAR",
+    "Color": "AMARILLO",
+    "Python": 73845,
+    "Excel": 73845.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "SCHMITTLEIN EDUARDO DAMIAN",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "SCHMITTLEIN GONZALO NAHUEL",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "SCHMITTLEIN LUCAS DAMIAN",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "SEGARRA RUBEN OMAR",
+    "Color": "CELESTE",
+    "Python": 709228,
+    "Excel": 709229.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "SILVERO DOS SANTOS MA",
+    "Color": "CELESTE",
+    "Python": 953928,
+    "Excel": 953929.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "SOSA MARIO NAHUEL",
+    "Color": "AMARILLO",
+    "Python": 442542,
+    "Excel": 442543.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "TABARES PABLO MARIANO",
+    "Color": "AMARILLO",
+    "Python": 0,
+    "Excel": 0.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "TAPIA DAVID ALFREDO",
+    "Color": "AMARILLO",
+    "Python": 433815,
+    "Excel": 433815.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "TORCHIANA AGOSTINA",
+    "Color": "AZUL",
+    "Python": 1419106,
+    "Excel": 1419106.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "TORCHIANA ANTONELLA",
+    "Color": "CELESTE",
+    "Python": 814653,
+    "Excel": 814653.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "TORCHIANA FACUNDO",
+    "Color": "AZUL",
+    "Python": 2074763,
+    "Excel": 2074763.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "TORRES JOSE RAMON",
+    "Color": "AMARILLO",
+    "Python": 901475,
+    "Excel": 901475.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "VALLEJOS CRISTIAN MAR",
+    "Color": "CELESTE",
+    "Python": 839306,
+    "Excel": 839307.0,
+    "Diff": -1.0,
+    "Status": "OK"
+  },
+  {
+    "Nombre": "VELAZQUEZ JUAN ANTONI",
+    "Color": "AMARILLO",
+    "Python": 710583,
+    "Excel": 710583.0,
+    "Diff": 0.0,
+    "Status": "OK"
+  }
+]

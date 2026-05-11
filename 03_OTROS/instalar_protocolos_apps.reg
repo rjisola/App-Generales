@@ -1,0 +1,241 @@
+Windows Registry Editor Version 5.00
+
+; Protocolo para Calculadora de Horas
+[HKEY_CLASSES_ROOT\sueldos-calculadora]
+@="URL:Calculadora de Horas"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-calculadora\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-calculadora\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-calculadora\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_calculadora.bat\""
+
+; Protocolo para Generar Recibos
+[HKEY_CLASSES_ROOT\sueldos-recibos]
+@="URL:Generar Recibos"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-recibos\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-recibos\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-recibos\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_recibos.bat\""
+
+; Protocolo para Procesar Sueldos
+[HKEY_CLASSES_ROOT\sueldos-procesar]
+@="URL:Procesar Sueldos"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-procesar\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-procesar\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-procesar\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_procesar.bat\""
+
+; Protocolo para Buscar Recibos
+[HKEY_CLASSES_ROOT\sueldos-buscar]
+@="URL:Buscar Recibos"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-buscar\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-buscar\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-buscar\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_buscar.bat\""
+
+; Protocolo para Horas Depósito
+[HKEY_CLASSES_ROOT\sueldos-deposito]
+@="URL:Horas Depósito"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-deposito\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-deposito\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-deposito\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_deposito.bat\""
+
+; Protocolo para Imprimir Sobres
+[HKEY_CLASSES_ROOT\sueldos-sobres]
+@="URL:Imprimir Sobres"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-sobres\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-sobres\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-sobres\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_sobres.bat\""
+
+; Protocolo para Aguinaldo
+[HKEY_CLASSES_ROOT\sueldos-aguinaldo]
+@="URL:Aguinaldo Efectivo"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-aguinaldo\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-aguinaldo\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-aguinaldo\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_aguinaldo.bat\""
+
+; Protocolo para Enviar Email
+[HKEY_CLASSES_ROOT\sueldos-email]
+@="URL:Enviar Documentación"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-email\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-email\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-email\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_email.bat\""
+
+; Protocolo para Extractor de Firmas PDF
+[HKEY_CLASSES_ROOT\sueldos-firmas]
+@="URL:Extractor de Firmas"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-firmas\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-firmas\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-firmas\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_firmas.bat\""
+
+; Protocolo para Formulario EPP
+[HKEY_CLASSES_ROOT\sueldos-epp]
+@="URL:Formulario EPP"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-epp\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-epp\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-epp\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_epp.bat\""
+
+; Protocolo para Lector Inteligente IA
+[HKEY_CLASSES_ROOT\sueldos-lector]
+@="URL:Lector Inteligente"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-lector\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-lector\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-lector\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_lector.bat\""
+
+; Protocolo para Promedios de Sueldos
+[HKEY_CLASSES_ROOT\sueldos-promedio]
+@="URL:Promedios Sueldos"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-promedio\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-promedio\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-promedio\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_promedio.bat\""
+
+; Protocolo para Guía Pago Bancario
+[HKEY_CLASSES_ROOT\sueldos-pago]
+@="URL:Guía Pago Bancario"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-pago\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-pago\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-pago\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_pago.bat\""
+
+; Protocolo para Buscador de Conceptos
+[HKEY_CLASSES_ROOT\sueldos-conceptos]
+@="URL:Buscador de Conceptos"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-conceptos\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-conceptos\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-conceptos\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_conceptos.bat\""
+
+; Protocolo para Fechas de Ingreso (Excel)
+[HKEY_CLASSES_ROOT\sueldos-fechas]
+@="URL:Fechas Ingreso"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-fechas\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-fechas\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-fechas\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_fechaingreso.bat\""
+
+; Protocolo para Planilla x Índice
+[HKEY_CLASSES_ROOT\sueldos-planilla]
+@="URL:Planilla x Índice"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-planilla\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-planilla\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-planilla\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_planilla.bat\""
+
+; Protocolo para Acomodar PDF
+[HKEY_CLASSES_ROOT\sueldos-acomodar]
+@="URL:Acomodar PDF"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-acomodar\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-acomodar\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-acomodar\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_acomodar.bat\""
+
+; Protocolo para Preparar Quincena
+[HKEY_CLASSES_ROOT\sueldos-preparar]
+@="URL:Preparar Quincena"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-preparar\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-preparar\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-preparar\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_preparar.bat\""
+
+; Protocolo para Firmador Masivo PDF
+[HKEY_CLASSES_ROOT\sueldos-firmador]
+@="URL:Firmador Masivo PDF"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-firmador\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-firmador\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-firmador\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_firmador.bat\""
+
+; Protocolo para Extraer Fechas PDF
+[HKEY_CLASSES_ROOT\sueldos-fechas-pdf]
+@="URL:Extraer Fechas PDF"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\sueldos-fechas-pdf\shell]
+
+[HKEY_CLASSES_ROOT\sueldos-fechas-pdf\shell\open]
+
+[HKEY_CLASSES_ROOT\sueldos-fechas-pdf\shell\open\command]
+@="\"c:\\Users\\rjiso\\OneDrive\\Escritorio\\PROCESAR ARCHIVO SUELDOS\\01_APLICACIONES\\launch_fechas_pdf.bat\""

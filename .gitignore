@@ -1,16 +1,41 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
+# ======================================================================
+# ARCHIVO DE SEGURIDAD PARA GITHUB (No borrar)
+# Este archivo evita que se suba información confidencial a internet
+# ======================================================================
 
-# Excel temporary files
-~$*.xlsx
-~$*.xlsm
+# 1. IGNORAR EXCEL Y DATOS CONFIDENCIALES (Nombres, Sueldos, etc.)
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.pdf
+
+# 2. IGNORAR BASES DE DATOS Y LOGS
+*.db
+*.sqlite
+*.log
 *.tmp
 
-# Carpetas de limpieza/backups locales
-borrar/
+# 3. IGNORAR CARPETAS DE BASURA Y BACKUPS
+_PAPELERA_TEMPORAL/
 backups/
+borrar/
 
-# Logs
-*.log
+# 4. IGNORAR ARCHIVOS TEMPORALES DE PYTHON
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+
+# 5. IGNORAR ARCHIVOS TEMPORALES DE C# Y VISUAL STUDIO
+bin/
+obj/
+.vs/
+*.user
+
+# 6. IGNORAR SISTEMA OPERATIVO
+Thumbs.db
+Desktop.ini
+.DS_Store

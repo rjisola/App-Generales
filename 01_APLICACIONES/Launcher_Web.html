@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueldos Carjor - Web Launcher ☀️</title>
+    <!-- Cache-Control forzada -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS CLAROS FORZADOS */
+        html, body { 
+            background-color: #f0f4f8 !important; 
+            color: #1a202c !important;
+            font-family: 'Inter', sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+        .glass { background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.5); }
+        .app-card { background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1); border-color: #3b82f6 !important; background-color: #f8faff !important; }
+        .gradient-text { background: linear-gradient(to right, #1d4ed8, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const APPS = [
+            { id: 'preparar', num: 1, name: 'Preparar Quincena', emoji: '📅', color: '#e11d48', desc: 'Limpieza integral de Excel y reseteo de fórmulas.' },
+            { id: 'deposito', num: 2, name: 'Horas Depósito', emoji: '🏪', color: '#0d9488', desc: 'Procesa novedades de horas de logística.' },
+            { id: 'fechas-pdf', num: 3, name: 'Antigüedad (desde PDF)', emoji: '📅', color: '#2563eb', desc: 'Extrae datos de recibos y calcula antigüedad automáticamente.' },
+            { id: 'planilla', num: 4, name: 'Completar Horas Contador', emoji: '📑', color: '#0d9488', desc: 'Ordena planillas según el índice maestro.' },
+            { id: 'procesar', num: 5, name: 'Procesar Sueldos', emoji: '💼', color: '#7c3aed', desc: 'Motor central de liquidación y cierre.' },
+            { id: 'recibos', num: 6, name: 'Generar Recibos', emoji: '📄', color: '#059669', desc: 'Crea recibos de sueldo individuales en PDF.' },
+            { id: 'cruce', num: 7, name: 'Planilla acomodada por indice', emoji: '🔄', color: '#0891b2', desc: 'Cruza datos para generar archivo CSV.' },
+            { id: 'acomodar', num: 8, name: 'Acomodar PDF', emoji: '📂', color: '#e11d48', desc: 'Organiza, separa o une archivos PDF.' },
+            { id: 'sobres', num: 9, name: 'Imprimir Sobres', emoji: '✉️', color: '#0891b2', desc: 'Configuración e impresión de sobres C5.' },
+            { id: 'pago', num: 10, name: 'Guía Pago Bancario', emoji: '🏦', color: '#059669', desc: 'Filtra datos para transferencias masivas.' },
+            { id: 'calculadora', num: 11, name: 'Calculadora de Horas', emoji: '🧮', color: '#2563eb', desc: 'Cálculo de jornales UOCRA, NASA y UECARA.' },
+            { id: 'buscar', num: 12, name: 'Buscar Recibos PDF', emoji: '🔍', color: '#d97706', desc: 'Localiza y abre recibos por legajo.' },
+            { id: 'conceptos', num: 13, name: 'Extracción de Datos a Elección', emoji: '🔎', color: '#7c3aed', desc: 'Extrae importes específicos desde PDFs.' },
+            { id: 'promedio', num: 14, name: 'Promedios de Sueldos', emoji: '📊', color: '#2563eb', desc: 'Informe de promedios mensualizados.' },
+            { id: 'epp', num: 15, name: 'Formulario EPP', emoji: '🛡️', color: '#d97706', desc: 'Genera planillas de entrega de equipos.' },
+            { id: 'email', num: 16, name: 'Enviar Documentación', emoji: '✈️', color: '#e11d48', desc: 'Envío masivo de recibos vía Gmail.' },
+            { id: 'aguinaldo', num: 17, name: 'Aguinaldo Unificado', emoji: '🎯', color: '#4f46e5', desc: 'Asistente integral para el cálculo del SAC.' },
+            { id: 'firmador', num: 18, name: 'Firmador Masivo PDF', emoji: '✍️', color: '#0d9488', desc: 'Estampa una firma PNG en todas las hojas de un PDF masivamente.' },
+        ];
+
+        function App() {
+            const [status, setStatus] = useState('✦ Sistema de Sueldos Listo (Versión Clara)');
+
+            const launchApp = (appId) => {
+                setStatus(`🚀 Iniciando ${appId}...`);
+                const protocolUrl = `sueldos-${appId}:open`;
+                window.location.href = protocolUrl;
+                
+                setTimeout(() => {
+                    setStatus(`✓ Protocolo ${appId} enviado.`);
+                }, 1500);
+            };
+
+            return (
+                <div className="min-h-screen p-6 md:p-12 pb-24">
+                    <header className="max-w-6xl mx-auto mb-10 text-center">
+                        <h1 className="text-5xl font-extrabold gradient-text">Sueldos Carjor</h1>
+                        <p className="text-xl text-gray-600 mt-2 font-medium">Ecosistema inteligente · Versión Web Desktop ☀️</p>
+                    </header>
+
+                    <main className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            {APPS.map(app => (
+                                <div 
+                                    key={app.id} 
+                                    className="app-card rounded-2xl p-5 flex flex-col h-full"
+                                    onClick={() => launchApp(app.id)}
+                                >
+                                    <div className="flex items-start gap-4 mb-3">
+                                        <div className="relative shrink-0">
+                                            <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm" style={{ backgroundColor: `${app.color}15` }}>
+                                                {app.emoji}
+                                            </div>
+                                            <div className="absolute -top-2 -left-2 w-7 h-7 bg-white border-2 rounded-full flex items-center justify-center shadow-md" style={{ borderColor: app.color }}>
+                                                <span className="text-[11px] font-black" style={{ color: app.color }}>{app.num}</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex-1 pt-1">
+                                            <h3 className="text-[13px] font-extrabold text-gray-900 leading-tight uppercase tracking-tight">{app.name}</h3>
+                                            <span className="text-[9px] font-bold uppercase tracking-wider text-green-600 bg-green-50 px-2 py-0.5 rounded-full mt-1 inline-block">Disponible</span>
+                                        </div>
+                                    </div>
+                                    <p className="text-gray-500 text-[11px] flex-grow leading-relaxed line-clamp-2">{app.desc}</p>
+                                    <div className="mt-3 flex justify-end">
+                                        <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                            <span className="text-sm">→</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </main>
+
+                    <footer className="fixed bottom-0 left-0 w-full glass py-3 px-8 border-t flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <span className="text-green-500 animate-pulse">●</span>
+                            <span className="text-xs font-semibold text-gray-700">{status}</span>
+                        </div>
+                        <div className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
+                            Versión: ☀️ CLARA · Protocolos Natales
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
